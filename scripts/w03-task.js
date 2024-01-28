@@ -35,7 +35,7 @@ let multiplyNumbers = () => {
     document.querySelector('#product').value = multiply(multiplyNumber1, multiplyNumber2);
 }
 /* Open Function Use - Divide Numbers */
-let divide = (number1, number2) => number1 * number2;
+let divide = (number1, number2) => number1 / number2;
 
 let divideNumbers = () => {
     let divideNumber1 = Number(document.querySelector('#dividend').value);
@@ -46,14 +46,14 @@ let divideNumbers = () => {
 
 /* Decision Structure */
 let calculateTotal = () => {
-    let subtotal = Number(document.querySelector('subtotal'));
-    let membershipCheck = document.getElementById('membership');
+    let subtotal = Number(document.querySelector('#subtotal').value);
+    let membershipCheck = document.getElementById('membership').checked;
 
     if (membershipCheck == true) {
-        document.querySelector('total').value = subtotal - (subtotal * 0.2);
+        document.querySelector('#total').value = subtotal - (subtotal * 0.2);
     }
     else {
-        document.querySelector('total').value = subtotal;
+        document.querySelector('#total').value = subtotal;
     }
 }
 
@@ -63,6 +63,8 @@ document.querySelector('#addNumbers').addEventListener('click', addNumbers);
 document.querySelector('#subtractNumbers').addEventListener('click', subtractNumbers);
 document.querySelector('#multiplyNumbers').addEventListener('click', multiplyNumbers);
 document.querySelector('#divideNumbers').addEventListener('click', divideNumbers);
+
+document.querySelector('#getTotal').addEventListener('Click', calculateTotal);
 
 /* ARRAY METHODS - Functional Programming */
 /* Output Source Array */
