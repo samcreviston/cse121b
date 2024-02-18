@@ -67,14 +67,36 @@ document.querySelector('#divideNumbers').addEventListener('click', divideNumbers
 document.querySelector('#getTotal').addEventListener('Click', calculateTotal);
 
 /* ARRAY METHODS - Functional Programming */
+let numbersArray = [1,2,3,4,5,6,7,8,9,10,11,12,13];
+var numArray = document.getElementById('array');
+numArray.innerHTML = numbersArray;
+
 /* Output Source Array */
 
-/* Output Odds Only Array */
 
+/* Output Odds Only Array */
+let oddNumbers = numbersArray.filter(number => number % 2 !== 0);
+var oddsElement = document.getElementById('odds');
+oddsElement.innerHTML = oddNumbers;
 /* Output Evens Only Array */
+let evenNumbers = numbersArray.filter(number => number % 2 !== 1);
+var evensElement = document.getElementById('evens');
+evensElement.innerHTML = evenNumbers;
 
 /* Output Sum of Org. Array */
+let arraySum = numbersArray.reduce((total, current) => total + current, 0);
+var sumElement = document.getElementById('sumOfArray');
+sumElement.innerHTML = arraySum;
 
 /* Output Multiplied by 2 Array */
+let multipliedArray = numbersArray.map(num => num * 2);
+var multipliedElement = document.getElementById('multiplied');
+multipliedElement.innerHTML = multipliedArray;
 
 /* Output Sum of Multiplied by 2 Array */
+let sumOfMultiplied = numbersArray
+.map(num => num * 2)
+.reduce((acc, curr) => acc + curr, 0);
+
+var sumOfMultipliedElement = document.getElementById('sumOfMultiplied');
+sumOfMultipliedElement.innerHTML = sumOfMultiplied;
